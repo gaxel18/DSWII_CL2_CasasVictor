@@ -48,5 +48,16 @@ public class ProductoService {
         }
     }
 
+    public List<Producto> buscarPorNombre(String nombre) {
+        return null;
+    }
+
+    public List<Producto> findProductosEnRangoDeCantidad() {
+        return null;
+    }
+
+    public List<Producto> findProductosConFechaDeVencimiento2024() {
+        return null;
+    }
 }
 

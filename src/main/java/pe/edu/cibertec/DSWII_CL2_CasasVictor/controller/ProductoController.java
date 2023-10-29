@@ -55,6 +55,23 @@ public class ProductoController {
         return new ResponseEntity<>(productoList, HttpStatus.OK);
     }
 
+    @GetMapping("/buscar-por-nombre")
+    public ResponseEntity<List<Producto>> buscarPorNombre(@RequestParam String nombre) {
+        List<Producto> productos = productoService.buscarPorNombre(nombre);
+        return ResponseEntity.ok(productos);
+    }
+
+    @GetMapping("/productos-en-rango-de-cantidad")
+    public ResponseEntity<List<Producto>> productosEnRangoDeCantidad() {
+        List<Producto> productos = productoService.findProductosEnRangoDeCantidad();
+        return ResponseEntity.ok(productos);
+    }
+
+    @GetMapping("/productos-con-fecha-2024")
+    public ResponseEntity<List<Producto>> productosConFecha2024() {
+        List<Producto> productos = productoService.findProductosConFechaDeVencimiento2024();
+        return ResponseEntity.ok(productos);
+    }
 
     @PostMapping("")
     public ResponseEntity<Producto> registrarProducto(
@@ -92,5 +109,7 @@ public class ProductoController {
         } catch (Exception exception) {
             return new ResponseEntity<>("Error al eliminar el producto con ID: " + id, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+
     }
 }
