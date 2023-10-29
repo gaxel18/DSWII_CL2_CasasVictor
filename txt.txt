@@ -1,0 +1,13 @@
+CREATE TABLE Producto (
+    ProductoID INT PRIMARY KEY,
+    Nombre VARCHAR(255) NOT NULL,
+    Descripcion TEXT,
+    Cantidad INT,
+    FechaVencimiento date
+);
+
+INSERT INTO Producto (Nombre, Descripcion, Cantidad, FechaVencimiento) VALUES 
+('Papel', 'Descripción', 1, '2030-01-01'),
+('Correa', 'Descripción', 2, '2028-07-09'),
+('Corbata', 'Descripción', 3, '2024-05-11'),
+('Mayonesa', 'Descripción', 4, '2028-06-12');
